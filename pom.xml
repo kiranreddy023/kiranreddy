@@ -10,8 +10,7 @@
 	
 	<properties>
 		<docker.image.prefix>kammana</docker.image.prefix>
-			<maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
+		
 	</properties>
 
 	<dependencies>
@@ -41,6 +40,7 @@
 		    <url>http://13.233.230.166:8081/repository/maven-releases/</url>
 		</repository>
   	</distributionManagement>
+
 	<pluginRepositories>
 	    <pluginRepository>    
 		<id>maven1</id>
