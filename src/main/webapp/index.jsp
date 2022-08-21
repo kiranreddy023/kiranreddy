@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<title> Kiran </title>
 <body>
