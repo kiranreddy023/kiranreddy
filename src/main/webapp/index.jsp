@@ -13,6 +13,9 @@
 
 		<h2>HTML Image</h2>
 		<img src="https://geographical.co.uk/wp-content/uploads/somalaya-mountain-range-title.jpg" alt="Trulli" width="500" height="333">
+
+		<h2>HTML Image</h2>
+<i		mg src="https://thumbs.dreamstime.com/b/spring-flowers-blue-crocuses-drops-water-backgro-background-tracks-rain-113784722.jpg" alt="Trulli" width="500" height="333">
 		
 	
 </body>
