@@ -13,9 +13,12 @@
 
 		<h2>HTML Image</h2>
 		<img src="https://geographical.co.uk/wp-content/uploads/somalaya-mountain-range-title.jpg" alt="Trulli" width="500" height="333">
+<<<<<<< HEAD
 
 		<h2>HTML Image</h2>
 		<img src="https://thumbs.dreamstime.com/b/spring-flowers-blue-crocuses-drops-water-backgro-background-tracks-rain-113784722.jpg" alt="flower" width="500" height="333">
+=======
+>>>>>>> parent of e867bff (added flower image)
 		
 	
 </body>
