@@ -1,34 +1,58 @@
 pipeline{
     agent any
     stages{
-               
-        stage("Develop"){
-			when{
-				branch "develop"
-			}
+
+       
+        stage("Dev-Deploy"){
+            when{
+                branch "develop"
+            }
             steps{
-				echo "this is develop"
-			}
-			
+                sshagent(['Tomcat']) {
+                    // some block
+                
+                    sh "mvn clean package"
+                    sh "scp -o StrictHostKeyChecking=no target/Kiran-1.war ec2-user@123.123.101.139:/opt/TOMCAT9/webapps"
+                
+                    sh "ssh ec2-user@123.123.101.139 /opt/TOMCAT9/bin/startup.sh"
+                }
+            }
         }
-		stage("qa"){
-			when{
-				branch "qa"
-			}
+
+
+           stage("qa-Deploy"){
+
+           when{
+                branch "qa"
+            }
             steps{
-				echo "this is qa"
-			}
-			
-        }
-		stage("master"){
-			when{
-				branch "master"
-			}
+                sshagent(['Tomcat']) {
+                    // some block
+                
+                    sh "mvn clean package"
+                    sh "scp -o StrictHostKeyChecking=no target/Kiran-1.war ec2-user@123.123.116.33:/opt/qa/webapps"
+        
+                    sh "ssh ec2-user@123.123.116.33 /opt/qa/bin/startup.sh"
+                }
+            }
+           }
+
+
+           stage("Prod-Deploy"){
+            when{
+                branch "master"
+            }
             steps{
-				echo "this is master"
-			}
-			
+                sshagent(['Tomcat']) {
+                    // some block
+                
+                    sh "mvn clean package"
+                    sh "scp -o StrictHostKeyChecking=no target/Kiran-1.war ec2-user@123.123.75.206:/opt/prod/webapps"
+                    
+                    sh "ssh ec2-user@123.123.75.206 /opt/prod/bin/startup.sh"
+                }
+            }
+           }
         }
     }
     
-}
