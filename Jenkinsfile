@@ -12,21 +12,21 @@ pipeline{
         stage("Dev-Deploy"){
             steps{
                 //call(id,user,ip,war)
-                deploy('Tomcat', "ec2-user", "123.123.101.139","Kiran-1")
+                deploy('Tomcat', "ec2-user", "123.123.101.139","Kiran-1.war")
             }
         }
         
         stage("QA-Deploy"){
             steps{
                 //call(id,user,ip,war)
-                deploy('Tomcat', "ec2-user", "123.123.116.33","Kiran-1")
+                deploy('Tomcat', "ec2-user", "123.123.116.33","Kiran-1.war")
             }
         }
 
         stage("Prod-Deploy"){
             steps{
                 //call(id,user,ip,war)
-                deploy('Tomcat', "ec2-user", "123.123.75.206","Kiran-1")
+                deploy('Tomcat', "ec2-user", "123.123.75.206","Kiran-1.war")
             }
         }
 
