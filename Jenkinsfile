@@ -21,7 +21,7 @@ pipeline{
         
         stage("QA-Deploy"){
              when {
-                branch "develop"
+                branch "qa"
             }
             steps{
                 //call(id,user,ip,war)
@@ -31,7 +31,7 @@ pipeline{
 
         stage("Prod-Deploy"){
              when {
-                branch "develop"
+                branch "main"
             }
             steps{
                 //call(id,user,ip,war)
