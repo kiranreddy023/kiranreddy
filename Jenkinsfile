@@ -1,4 +1,72 @@
+@Library("GitLib") _
 pipeline{
+    agent any
+
+    stages{
+        stage("Maven Build"){
+            steps{
+                sh "mvn clean package"
+            }
+        }
+
+        stage("Dev-Deploy"){
+            when {
+                branch "develop"
+            }
+            steps{
+                //call(id,user,ip,war)
+                deploy('Tomcat', "ec2-user", "123.123.101.139","Kiran-1.war")
+            }
+        }
+        
+        stage("QA-Deploy"){
+             when {
+                branch "qa"
+            }
+            steps{
+                //call(id,user,ip,war)
+                deploy('Tomcat', "ec2-user", "123.123.116.33","Kiran-1.war")
+            }
+        }
+
+        stage("Prod-Deploy"){
+             when {
+                branch "main"
+            }
+            steps{
+                //call(id,user,ip,war)
+                deploy('Tomcat', "ec2-user", "123.123.75.206","Kiran-1.war")
+            }
+        }
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''pipeline{
     agent any
     stages{
 
@@ -54,5 +122,5 @@ pipeline{
             }
            }
         }
-    }
+    }'''
     
