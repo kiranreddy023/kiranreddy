@@ -17,6 +17,8 @@ pipeline{
                 }
             }
         }
+
+
            stage("qa-Deploy"){
 
            when{
@@ -33,6 +35,8 @@ pipeline{
                 }
             }
            }
+
+
            stage("Prod-Deploy"){
             when{
                 branch "master"
@@ -51,4 +55,3 @@ pipeline{
         }
     }
     
-}
