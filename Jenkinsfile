@@ -1,16 +1,7 @@
 pipeline{
     agent any
     stages{
-        stage("Git Checkout"){
-            steps{
-                git credentialsId: '9eee4c0c-cafb-4ff0-8635-da93f0a87dda', url: 'https://github.com/kiranreddy023/kiranreddy.git'
-            }
-        }
-        stage("Build"){
-            steps{
-                sh "mvn clean package"
-            }
-        }
+               
         stage("Develop"){
 			when{
 				branch "develop"
