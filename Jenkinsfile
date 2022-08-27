@@ -10,6 +10,9 @@ pipeline{
         }
 
         stage("Dev-Deploy"){
+            when {
+                branch "develop"
+            }
             steps{
                 //call(id,user,ip,war)
                 deploy('Tomcat', "ec2-user", "123.123.101.139","Kiran-1.war")
@@ -17,6 +20,9 @@ pipeline{
         }
         
         stage("QA-Deploy"){
+             when {
+                branch "develop"
+            }
             steps{
                 //call(id,user,ip,war)
                 deploy('Tomcat', "ec2-user", "123.123.116.33","Kiran-1.war")
@@ -24,6 +30,9 @@ pipeline{
         }
 
         stage("Prod-Deploy"){
+             when {
+                branch "develop"
+            }
             steps{
                 //call(id,user,ip,war)
                 deploy('Tomcat', "ec2-user", "123.123.75.206","Kiran-1.war")
