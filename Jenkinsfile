@@ -13,7 +13,7 @@ pipeline{
         }
         stage("Develop"){
 			when{
-				"develop"
+				branch "develop"
 			}
             steps{
 				echo "this is develop"
@@ -22,7 +22,7 @@ pipeline{
         }
 		stage("qa"){
 			when{
-				"qa"
+				branch "qa"
 			}
             steps{
 				echo "this is qa"
@@ -31,7 +31,7 @@ pipeline{
         }
 		stage("master"){
 			when{
-				"master"
+				branch "master"
 			}
             steps{
 				echo "this is master"
