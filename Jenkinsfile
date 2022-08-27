@@ -7,7 +7,7 @@ pipeline{
                 sh "mvn clean package"
             }
         }
-        stage("Deploy"){
+        stage("Dev-Deploy"){
             when{
                 branch "develop"
             }
@@ -21,7 +21,10 @@ pipeline{
                     sh "ssh ec2-user@123.123.101.139 /opt/TOMCAT9/bin/startup.sh"
                 }
             }
-            when{
+        }
+           stage("qa-Deploy"){
+
+           when{
                 branch "qa"
             }
             steps{
@@ -34,6 +37,8 @@ pipeline{
                     sh "ssh ec2-user@123.123.116.33 /opt/qa/bin/startup.sh"
                 }
             }
+           }
+           stage("Prod-Deploy"){
             when{
                 branch "master"
             }
@@ -47,6 +52,7 @@ pipeline{
                     sh "ssh ec2-user@123.123.75.206 /opt/prod/bin/startup.sh"
                 }
             }
+           }
         }
     }
     
