@@ -1,11 +1,7 @@
 pipeline{
     agent any
     stages{
-        stage("Git Checkout"){
-            steps{
-                git credentialsId: '9eee4c0c-cafb-4ff0-8635-da93f0a87dda', url: 'https://github.com/kiranreddy023/kiranreddy.git'
-            }
-        }
+       
         stage("Build"){
             steps{
                 sh "mvn clean package"
@@ -48,7 +44,7 @@ pipeline{
                     
                     sh "scp -o StrictHostKeyChecking=no target/Kiran-1.war ec2-user@123.123.75.206:/opt/prod/webapps"
                     sh "ssh ec2-user@123.123.75.206 mv target/Kiran-1.war target/master.war"
-                    sh "ssh ec2-user@123.123.75.206 /opt/qa/bin/startup.sh"
+                    sh "ssh ec2-user@123.123.75.206 /opt/prod/bin/startup.sh"
                 }
             }
         }
