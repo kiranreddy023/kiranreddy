@@ -15,7 +15,7 @@ pipeline{
             }
             steps{
                 //call(id,user,ip,war)
-                deploy('Tomcat', "ec2-user", "123.123.101.139","Kiran-1.war")
+                deploy('Tomcat', "ec2-user", "123.123.92.188","Kiran-1.war")
             }
         }
         
@@ -25,7 +25,7 @@ pipeline{
             }
             steps{
                 //call(id,user,ip,war)
-                deploy('Tomcat', "ec2-user", "123.123.116.33","Kiran-1.war")
+                deploy('Tomcat', "ec2-user", "123.123.46.183","Kiran-1.war")
             }
         }
 
@@ -43,11 +43,6 @@ pipeline{
 
 
 }
-
-
-
-
-
 
 
 
