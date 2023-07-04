@@ -16,7 +16,7 @@ pipeline{
                 }
 		 stage("Nexus Upload"){
                         steps{
-				scripts{
+				script{
                                 	def pom = readMavenPom file: 'pom.xml'
 					def version = pom.version
 					nexusArtifactUploader artifacts: [[artifactId: 'Kiran', classifier: '', file: "target/Kiran-${version}", type: 'war']], 
