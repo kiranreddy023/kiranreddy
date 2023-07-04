@@ -30,5 +30,10 @@ pipeline{
 				}
                         }
                 }
+		stage("docker build"){
+                        steps{
+                                sh "docker build -t kiran023/kiranreddy:v${env.BUILD_NUMBER} ."
+                        }
+                }
         }
 }
