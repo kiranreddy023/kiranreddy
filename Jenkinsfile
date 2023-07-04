@@ -19,7 +19,7 @@ pipeline{
 				script{
                                 	def pom = readMavenPom file: 'pom.xml'
 					def version = pom.version
-					nexusArtifactUploader artifacts: [[artifactId: 'Kiran', classifier: '', file: "target/Kiran-${version}", type: 'war']], 
+					nexusArtifactUploader artifacts: [[artifactId: 'Kiran', classifier: '', file: "target/Kiran-${version}.war", type: 'war']], 
 					credentialsId: 'nexus', 
 					groupId: 'in.kkrv', 
 					nexusUrl: '52.66.241.61:8081/', 
