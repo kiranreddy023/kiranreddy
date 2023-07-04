@@ -26,7 +26,7 @@ pipeline{
 					nexusVersion: 'nexus3', 
 					protocol: 'http', 
 					repository: 'kiranreddy', 
-					version: ${version}
+					version: "${version}"
 				}
                         }
                 }
