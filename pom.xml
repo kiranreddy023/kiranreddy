@@ -4,7 +4,7 @@
         <groupId>in.kkrv</groupId>
         <artifactId>Kiran</artifactId>
         <packaging>war</packaging>
-        <version>0.0.4</version>
+        <version>0.0.5</version>
         <name>Reddy</name>
         <url>http://maven.apache.org</url>
 
