@@ -33,7 +33,18 @@ pipeline{
 		stage("docker build"){
                         steps{
                                 sh "docker build -t kiran023/kiranreddy:v${env.BUILD_NUMBER} ."
+
                         }
+                }
+		stage("docker push"){
+                        steps{
+				withCredentials([usernamePassword(credentialsId: 'DockerHUB', passwordVariable: 'pswd', usernameVariable: 'uname')]) {
+    // some block
+
+                                sh "docker login -u ${uname} -p ${pswd}"
+				sh "docker push kiran023/kiranreddy:v${env.BUILD_NUMBER}"
+	                        }
+			}
                 }
         }
 }
