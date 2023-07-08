@@ -22,7 +22,7 @@ pipeline{
 					nexusArtifactUploader artifacts: [[artifactId: 'Kiran', classifier: '', file: "target/Kiran-${version}.war", type: 'war']], 
 					credentialsId: 'nexus', 
 					groupId: 'in.kkrv', 
-					nexusUrl: '52.66.241.61:8081/', 
+					nexusUrl: '43.204.149.193:8081/', 
 					nexusVersion: 'nexus3', 
 					protocol: 'http', 
 					repository: 'kiranreddy', 
