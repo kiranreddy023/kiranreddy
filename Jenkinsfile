@@ -51,7 +51,7 @@ pipeline{
 		stage("docker deploy"){
 			steps{
 				withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'pswd', usernameVariable: 'uname')]) {
-					sh "docker run -it -dp 9898:8080 kiranreddy:v${env.BUILD_NUMBER}"
+					sh "docker run -it -dp 9898:8080 kiran023/kiranreddy:v${env.BUILD_NUMBER}"
 				}
 			}
 		}
