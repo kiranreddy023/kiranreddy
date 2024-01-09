@@ -14,7 +14,8 @@ pipeline{
                                 sh "mvn test"
                         }
                 }
-		 stage("Nexus Upload"){
+		 /*
+   stage("Nexus Upload"){
                         steps{
 				script{
                                 	def pom = readMavenPom file: 'pom.xml'
@@ -29,7 +30,8 @@ pipeline{
 					version: "${version}"
 				}
                         }
-                }
+                } 
+		*/
 		stage("docker build"){
                         steps{
                                 sh "docker build -t kiran023/kiranreddy:v${env.BUILD_NUMBER} ."
